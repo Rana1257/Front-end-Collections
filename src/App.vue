@@ -1,13 +1,24 @@
 <template>
   <div id="app">
+    <header-component></header-component>
     <img src="./assets/logo.png">
-    <router-view/>
+    <home-component></home-component>
+    <!-- <router-view/> -->
+    <el-button>START</el-button>
+
   </div>
 </template>
 
 <script>
+import headerComponent from './components/header'
+import homeComponent from './components/home'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    homeComponent,
+    headerComponent
+  }
 }
 </script>
 
