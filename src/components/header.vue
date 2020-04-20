@@ -1,9 +1,9 @@
 <template>
-    <div id="header">
+    <div class="header">
         <router-link to="/">
-            <header>
-                {{titleText}}
-            </header>
+            <el-page-header title="前端基础与进阶指南">
+                <!-- {{titleText}} -->
+            </el-page-header>
         </router-link>
     </div>
 </template>
@@ -22,16 +22,8 @@ export default {
 <style lang="stylus" scoped>
     .router-link-active
         text-decoration none
+    .header >>> .el-page-header__title
+        font-size 16px
+        color #304455
 
-    #header
-        width 100%
-        height 60px
-        position absolute
-        top 0
-        left 0
-        text-align left
-        background-color #cccccc
-        header
-            padding 10px 20px
-            color #304455
 </style>
