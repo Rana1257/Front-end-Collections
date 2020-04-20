@@ -1,6 +1,8 @@
 # front-end-collections
 
-> A Vue.js project
+预览：
+https://rana1257.github.io/Front-end-Collections/
+
 
 ## Build Setup
 
