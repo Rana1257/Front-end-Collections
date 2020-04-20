@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import './assets/theme/index.css'
 import headerComponent from './components/index/header'
 import homeComponent from './components/index/home'
 import asideComponent from './components/index/aside'
