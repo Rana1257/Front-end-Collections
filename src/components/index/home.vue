@@ -1,11 +1,14 @@
 <template>
     <div>
-        <h1>
-            {{welcomeText}}
-        </h1>
-        <h3>
-            {{explainationText}}
-        </h3>
+        <el-main>
+            <img src="../../assets/logo.png">
+            <h1>
+                {{welcomeText}}
+            </h1>
+            <h3>
+                {{explainationText}}
+            </h3>
+        </el-main>
     </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header-component></header-component>
-    <img src="./assets/logo.png">
+    <!-- <aside-component></aside-component> -->
     <home-component></home-component>
     <!-- <router-view/> -->
     <el-button>START</el-button>
@@ -11,14 +11,16 @@
 
 <script>
 import './assets/theme/index.css'
-import headerComponent from './components/header'
-import homeComponent from './components/home'
+import headerComponent from './components/index/header'
+import homeComponent from './components/index/home'
+import asideComponent from './components/index/aside'
 
 export default {
   name: 'App',
   components: {
     homeComponent,
-    headerComponent
+    headerComponent,
+    asideComponent
   }
 }
 </script>
