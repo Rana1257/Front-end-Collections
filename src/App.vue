@@ -1,25 +1,23 @@
 <template>
   <div id="app">
     <header-component></header-component>
+    <router-view/>
     <!-- <aside-component></aside-component> -->
-    <home-component></home-component>
-    <!-- <router-view/> -->
-    <el-button>START</el-button>
-
+    <!-- <home-component></home-component>
+    <router-link to="/main">START</router-link>
+     -->
   </div>
 </template>
 
 <script>
 import headerComponent from './components/index/header'
 import homeComponent from './components/index/home'
-import asideComponent from './components/index/aside'
 
 export default {
   name: 'App',
   components: {
     homeComponent,
-    headerComponent,
-    asideComponent
+    headerComponent
   }
 }
 </script>

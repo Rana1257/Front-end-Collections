@@ -9,6 +9,9 @@
                 {{explainationText}}
             </h3>
         </el-main>
+        <router-link to="/main">
+            <el-button>START</el-button>
+        </router-link>
     </div>
 </template>
 
