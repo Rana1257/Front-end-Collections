@@ -1,13 +1,13 @@
 <template>
     <div>
-        <el-main>
+        <el-main class="main">
             <img src="../../assets/logo.png">
             <h1>
                 {{welcomeText}}
             </h1>
-            <h3>
+            <h2>
                 {{explainationText}}
-            </h3>
+            </h2>
         </el-main>
         <router-link to="/main">
             <el-button>START</el-button>
@@ -21,14 +21,25 @@ export default {
   name: 'homeComponent',
   data () {
     return {
-      welcomeText: '前端基础与进阶指南',
-      explainationText: '愿在你的前端道路上助你一臂之力'
+      welcomeText: 'Front end Collections',
+      explainationText: 'An Easy way to improve your skills'
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-    h1
-        color #304455
+    main
+        display flex
+        flex-direction column
+        justify-content center
+        flex-wrap wrap
+        img
+            width 200px
+            height 200px
+            margin 0 auto
+        h1
+            color #304455
+        h2
+            color #6a8bad
 </style>

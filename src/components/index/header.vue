@@ -4,9 +4,11 @@
             <el-page-header title="前端基础与进阶指南" class="header-title"></el-page-header>
         </router-link> -->
         <el-menu class="header-menu">
-            <el-menu-item index="1" class="title">前端基础与进阶指南</el-menu-item>
+            <router-link to="/">
+                <el-menu-item index="1" class="title">{{titleText}}</el-menu-item>
+            </router-link>
             <el-menu-item index="2" class="blank"></el-menu-item>
-            <el-menu-item index="3" class="linkToIndex">指南</el-menu-item>
+            <!-- <el-menu-item index="3" class="linkToIndex">指南</el-menu-item> -->
             <el-menu-item index="4" class="linkToGithub" @click="handelLinkToGithub">Github</el-menu-item>
         </el-menu>
     </div>
@@ -17,7 +19,7 @@ export default {
   name: 'headerComponent',
   data () {
     return {
-      titleText: '前端基础与进阶指南 '
+      titleText: 'Front end Collections '
     }
   },
   methods: {
@@ -42,12 +44,10 @@ export default {
         display flex
         border 0
         .title
-            flex 0 0 200px
+            flex 0 0 25%
         .blank
             flex 1
             visibility hidden
-        .linkToIndex
-            flex 0 0 100px
         .linkToGithub
-            flex 0 0 100px
+            flex 0 0 20%
 </style>

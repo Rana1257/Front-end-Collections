@@ -3,38 +3,16 @@
         <el-row>
             <el-col>
                 <el-menu>
-                    <el-menu-item index="1">
-                        <!-- <i class="el-icon-menu"></i> -->
-                        <span slot="title">前言</span>
-                    </el-menu-item>
-                    <el-menu-item index="2">
-                        <!-- <i class="el-icon-menu"></i> -->
-                        <span slot="title">aside2</span>
-                    </el-menu-item>
-                    <el-menu-item index="3">
-                        <!-- <i class="el-icon-menu"></i> -->
-                        <span slot="title">aside2</span>
-                    </el-menu-item>
-                    <el-menu-item index="4">
-                        <!-- <i class="el-icon-menu"></i> -->
-                        <span slot="title">aside2</span>
-                    </el-menu-item>
-                    <el-menu-item index="5">
-                        <!-- <i class="el-icon-menu"></i> -->
-                        <span slot="title">aside2</span>
-                    </el-menu-item>
-                    <el-menu-item index="6">
-                        <!-- <i class="el-icon-menu"></i> -->
-                        <span slot="title">aside2</span>
-                    </el-menu-item>
-                    <el-menu-item index="7">
-                        <!-- <i class="el-icon-menu"></i> -->
-                        <span slot="title">aside2</span>
-                    </el-menu-item>
-                    <el-menu-item index="8">
-                        <!-- <i class="el-icon-menu"></i> -->
-                        <span slot="title">aside2</span>
-                    </el-menu-item>
+                    <el-submenu index="1">
+                        <template slot="title">
+                            <span>前言</span>
+                        </template>
+                        <el-menu-item-group>
+                            <el-menu-item index="1-1">主要内容</el-menu-item>
+                            <el-menu-item index="1-2">为什么会有这个项目</el-menu-item>
+                            <el-menu-item index="1-3">总结</el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
                 </el-menu>
             </el-col>
         </el-row>
@@ -65,7 +43,16 @@ export default {
         position absolute
         left 0
         top 100px
+        width 15%
+        text-align left
     .aside >>> .el-menu
-        width 200px
         border-right 0
+    .aside >>> .el-icon-arrow-down
+        opacity 0
+    .aside >>> .el-menu-item
+        overflow hidden
+        white-space nowrap
+        min-width 0
+    .aside >>> .el-submenu__title
+        font-weight 700
 </style>
