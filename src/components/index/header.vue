@@ -38,11 +38,13 @@ export default {
         color #304455
         height 60px
         line-height 60px
+    .header
+        border-bottom 1px solid #ecf8f3
     .header >>> .el-menu
         width 100%
         height 60px
         display flex
-        border 0
+        border-right 0
         .title
             flex 0 0 25%
         .blank
