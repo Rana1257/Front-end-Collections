@@ -141,7 +141,7 @@ Object.defineProperty(obj, prop, descriptor) 的第三个参数 descriptor 可�
     observe(object)
 ```
 对于object这个对象，我们使用一个 observe 函数对此对象的所有属性，调用 defineReactive 这个函数使得object所有的属性都变成响应式的。
-这里有一个小trick。一个对象的属性值可能还是一个对象，因此需要递归地遍历整个对象。此外，我们在 Object.defineProperty 中还设置了 enumerable: true 使属性可枚举，configurable: true 使属性可修改。
+这里有一个小trick。一个对象属性对应的值可能还是一个对象，因此需要递归地遍历整个对象。此外，我们在 Object.defineProperty 中还设置了 enumerable: true 使属性可枚举，configurable: true 使属性可修改。
 
 现在你应该明白[Vue官方文档](https://cn.vuejs.org/v2/guide/reactivity.html)里面
 >当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。Object.defineProperty 是 ES5 中一个无法 shim 的特性，这也就是 Vue 不支持 IE8 以及更低版本浏览器的原因。
