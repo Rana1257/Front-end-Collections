@@ -250,7 +250,7 @@ Dependence 函数里面有一个数组 subscribers 用于保存订阅者，Depen
         run: function(){
             let newValue = this.vm.$data[this.expression]
             let oldValue = this.value
-            if(!newValue !== oldValue){
+            if(newValue !== oldValue){
                 this.value = newValue
                 this.callbackFunc.call(this.vm, newValue)
             }
