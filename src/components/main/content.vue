@@ -1,6 +1,6 @@
 <template>
     <div>
-        <vue-markdown class="mdClass markdown-body" :source="msg"></vue-markdown>
+        <vue-markdown class="mdClass markdown-body" :source="markdownText"></vue-markdown>
         <el-backtop></el-backtop>
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      msg: '',
+      markdownText: '',
       index: 0,
       url: ''
     }
@@ -32,7 +32,7 @@ export default {
       axios
         .get(this.url)
         .then(response => {
-          this.msg = response.data
+          this.markdownText = response.data
         })
     }
   },
@@ -41,7 +41,7 @@ export default {
     axios
       .get(this.url)
       .then(response => {
-        this.msg = response.data
+        this.markdownText = response.data
       })
   }
 }
