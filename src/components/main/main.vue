@@ -1,14 +1,16 @@
 <template>
     <div class="main">
-        <el-main v-loading="loading">
+        <el-main>
             <el-row class="aside">
                 <el-col>
                     <el-menu
                     :unique-opened="uniqueOpen"
-                    :default-active="defaultActive"
-                    :router="true"
+                    :default-active="String(currentId)"
                     >
-                        <el-menu-item v-for="titles in content" :key="titles.id" :index="titles.routerId">
+                        <el-menu-item
+                        v-for="titles in content"
+                        :key="titles.id"
+                        v-on:click="asideClick(titles.id)">
                             <!-- <router-link :to="titles.routerId"> -->
                             <template slot="title">
                                 <span>{{titles.title}}</span>
@@ -21,32 +23,33 @@
                     </el-menu>
                 </el-col>
             </el-row>
-            <router-view></router-view>
+            <content-component v-bind:id="currentId"></content-component>
         </el-main>
     </div>
 </template>
 
 <script>
-import asideComponent from './aside'
+import contentComponent from './content.vue'
 export default {
   name: 'mainComponent',
+  components: {
+    contentComponent
+  },
   data () {
     return {
       name: 'MAIN',
-      loading: true,
       content: [
-        {id: 1, routerId: '/main/content', title: '简介', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 2, routerId: '/main/vue', title: '双向数据绑定', subTitle: ['前言', '为什么会有这个项目', '总结']}
+        {id: 0, title: '简介', subTitle: ['前言', '为什么会有这个项目', '总结']},
+        {id: 1, title: '双向数据绑定', subTitle: ['前言', '为什么会有这个项目', '总结']}
       ],
       uniqueOpen: true,
-      defaultActive: '/main/content'
+      currentId: 0
     }
   },
-  components: {
-    asideComponent
-  },
-  mounted () {
-    this.loading = false
+  methods: {
+    asideClick (id) {
+      this.currentId = id
+    }
   }
 }
 </script>
