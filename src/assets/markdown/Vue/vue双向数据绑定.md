@@ -182,7 +182,7 @@ Object.defineProperty(obj, prop, descriptor) 的第三个参数 descriptor 可�
     function Dependence(){
         this.subscribers = []
     }
-    Dep.prototype = {
+    Dependence.prototype = {
         addSub: function(sub){
             this.subscribers.push(sub)
         },
