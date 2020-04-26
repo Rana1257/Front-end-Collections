@@ -1,6 +1,6 @@
 <template>
     <div>
-        <vue-markdown class="mdClass markdown-body">{{msg}}</vue-markdown>
+        <vue-markdown class="mdClass markdown-body">{{ msg }}</vue-markdown>
         <el-backtop></el-backtop>
     </div>
 </template>
