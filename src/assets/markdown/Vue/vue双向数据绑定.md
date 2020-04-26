@@ -262,6 +262,7 @@ Dependence 函数里面有一个数组 subscribers 用于保存订阅者，Depen
 
 此时，再修改一下defineReactive函数：
 ```javascript
+    let Dep.target = null
     function defineReactive(object, key, value){
         observe(value)
         const dep = new Dependence()
@@ -280,7 +281,6 @@ Dependence 函数里面有一个数组 subscribers 用于保存订阅者，Depen
             }
         })
     }
-    Dep.target = null
 ```
 
 最后，只需要定义一个我们自己的Vue构造函数，把上面这些内容汇总在一起就行：
