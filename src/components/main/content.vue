@@ -6,9 +6,10 @@
 </template>
 
 <script>
-// import vue双向数据绑定 from '../../assets/markdown/Vue/vue双向数据绑定.md'
 import VueMarkdown from 'vue-markdown'
-import axios from 'axios'
+import No0 from '../../../static/0.md'
+import No1 from '../../../static/1.md'
+// import axios from 'axios'
 import 'github-markdown-css'
 export default {
   name: 'contentComponent',
@@ -29,20 +30,18 @@ export default {
     id: function (id) {
       this.index = this.id
       this.url = 'static/' + this.index + '.md'
-      axios
-        .get(this.url)
-        .then(response => {
-          this.markdownText = response.data
-        })
+      this.markdownText = No1
     }
   },
   created () {
+    this.index = this.id
     this.url = 'static/' + this.index + '.md'
-    axios
-      .get(this.url)
-      .then(response => {
-        this.markdownText = response.data
-      })
+    this.markdownText = No0
+    // axios
+    //   .get(this.url)
+    //   .then(response => {
+    //     this.markdownText = response.data
+    //   })
   }
 }
 </script>
