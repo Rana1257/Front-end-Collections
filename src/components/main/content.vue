@@ -28,7 +28,7 @@ export default {
   watch: {
     id: function (id) {
       this.index = this.id
-      this.url = '../../../static/' + this.index + '.md'
+      this.url = 'static/' + this.index + '.md'
       axios
         .get(this.url)
         .then(response => {
@@ -37,7 +37,7 @@ export default {
     }
   },
   created () {
-    this.url = '../../../static/' + this.index + '.md'
+    this.url = 'static/' + this.index + '.md'
     axios
       .get(this.url)
       .then(response => {
