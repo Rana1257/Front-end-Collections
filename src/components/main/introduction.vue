@@ -7,17 +7,17 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-import No1 from '../../../static/1.md'
+import No0 from '../../../static/0.md'
 // import axios from 'axios'
 import 'github-markdown-css'
 export default {
-  name: 'contentComponent',
+  name: 'introductionComponent',
   components: {
     VueMarkdown
   },
   data () {
     return {
-      markdownText: No1
+      markdownText: No0
     }
   }
 }

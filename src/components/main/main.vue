@@ -5,12 +5,13 @@
                 <el-col>
                     <el-menu
                     :unique-opened="uniqueOpen"
-                    :default-active="String(currentId)"
+                    default-active="0"
+                    router
                     >
                         <el-menu-item
                         v-for="titles in content"
                         :key="titles.id"
-                        v-on:click="asideClick(titles.id)">
+                        :index="String(titles.id)">
                             <!-- <router-link :to="titles.routerId"> -->
                             <template slot="title">
                                 <span>{{titles.title}}</span>
@@ -23,7 +24,8 @@
                     </el-menu>
                 </el-col>
             </el-row>
-            <content-component v-bind:id="currentId"></content-component>
+            <!-- <content-component></content-component> -->
+            <router-view></router-view>
         </el-main>
     </div>
 </template>
@@ -44,11 +46,6 @@ export default {
       ],
       uniqueOpen: true,
       currentId: 0
-    }
-  },
-  methods: {
-    asideClick (id) {
-      this.currentId = id
     }
   }
 }
