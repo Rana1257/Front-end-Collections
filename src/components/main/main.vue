@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main markdown-body">
         <el-main>
             <el-row class="aside">
                 <el-col>
@@ -32,17 +32,21 @@
 
 <script>
 import contentComponent from './content.vue'
+import interviewComponent from './interview_qiniu.vue'
+
 export default {
   name: 'mainComponent',
   components: {
-    contentComponent
+    contentComponent,
+    interviewComponent
   },
   data () {
     return {
       name: 'MAIN',
       content: [
         {id: 0, title: '简介', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 1, title: '双向数据绑定', subTitle: ['前言', '为什么会有这个项目', '总结']}
+        {id: 1, title: '双向数据绑定', subTitle: ['前言', '为什么会有这个项目', '总结']},
+        {id: 2, title: '七牛云面经', subTitle: ['前言', '为什么会有这个项目', '总结']}
       ],
       uniqueOpen: true,
       currentId: 0

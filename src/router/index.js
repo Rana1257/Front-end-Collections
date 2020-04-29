@@ -4,6 +4,7 @@ import homeComponent from '../components/index/home.vue'
 import mainComponent from '../components/main/main.vue'
 import contentComponent from '../components/main/content.vue'
 import introductionComponent from '../components/main/introduction.vue'
+import interviewComponent from '../components/main/interview_qiniu.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,10 @@ export default new Router({
         {
           path: '/1',
           component: contentComponent
+        },
+        {
+          path: '/2',
+          component: interviewComponent
         }
       ]
     }
