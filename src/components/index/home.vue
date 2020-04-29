@@ -9,7 +9,7 @@
                 {{explainationText}}
             </h2>
         </el-main>
-        <router-link to="/0">
+        <router-link to="/main">
             <el-button>START</el-button>
         </router-link>
     </div>

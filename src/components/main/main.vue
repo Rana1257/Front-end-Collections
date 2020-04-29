@@ -1,17 +1,17 @@
 <template>
-    <div class="main markdown-body">
+    <div class="main">
         <el-main>
             <el-row class="aside">
                 <el-col>
                     <el-menu
                     :unique-opened="uniqueOpen"
                     default-active="0"
-                    router
                     >
                         <el-menu-item
                         v-for="titles in content"
                         :key="titles.id"
-                        :index="String(titles.id)">
+                        :index="String(titles.id)"
+                        v-on:click="asideClickHandler(titles.id)">
                             <!-- <router-link :to="titles.routerId"> -->
                             <template slot="title">
                                 <span>{{titles.title}}</span>
@@ -24,8 +24,8 @@
                     </el-menu>
                 </el-col>
             </el-row>
-            <!-- <content-component></content-component> -->
-            <router-view></router-view>
+            <content-component :id="currentId"></content-component>
+            <!-- <router-view></router-view> -->
         </el-main>
     </div>
 </template>
@@ -46,10 +46,15 @@ export default {
       content: [
         {id: 0, title: '简介', subTitle: ['前言', '为什么会有这个项目', '总结']},
         {id: 1, title: '双向数据绑定', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 2, title: '七牛云面经', subTitle: ['前言', '为什么会有这个项目', '总结']}
+        {id: 2, title: '面经汇总', subTitle: ['前言', '为什么会有这个项目', '总结']}
       ],
       uniqueOpen: true,
       currentId: 0
+    }
+  },
+  methods: {
+    asideClickHandler (id) {
+      this.currentId = id
     }
   }
 }
