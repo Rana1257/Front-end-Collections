@@ -32,13 +32,11 @@
 
 <script>
 import contentComponent from './content.vue'
-import interviewComponent from './interview_qiniu.vue'
 
 export default {
   name: 'mainComponent',
   components: {
-    contentComponent,
-    interviewComponent
+    contentComponent
   },
   data () {
     return {
