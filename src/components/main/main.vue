@@ -77,6 +77,8 @@ export default {
         overflow hidden
         white-space nowrap
         min-width 0
+    .aside >>> .is-active
+        color #3eaf7c
     .aside >>> .el-submenu__title
         padding-left 0
         font-weight 700
