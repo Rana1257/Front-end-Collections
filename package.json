@@ -20,7 +20,6 @@
     "md-to-json": "^1.0.2",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "vue": "^2.5.2",
     "vue-jsonp": "^0.1.8",
     "vue-router": "^3.0.1"
   },
