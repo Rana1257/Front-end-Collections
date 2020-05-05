@@ -5,19 +5,21 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    showLoading: false
+    isLoading: false
   },
   getters: {
-    returnShowLoading: (state) => {
-      return state.showLoading
+    showIsLoading (state) {
+      return state.isLoading
     }
   },
   mutations: {
-    changeShowLoadingAsTrue: (state) => {
-      state.showLoading = true
-    },
-    changeShowLoadingAsFalse: (state) => {
-      state.showLoading = false
+    updateIsLoading (state, flag) {
+      state.isLoading = flag
+    }
+  },
+  actions: {
+    onLoading (context, flag) {
+      context.commit('updateIsLoading', flag)
     }
   }
 })

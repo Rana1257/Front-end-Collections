@@ -13,6 +13,8 @@ import Col from 'element-ui/lib/col'
 import Menu from 'element-ui/lib/menu'
 import MenuItem from 'element-ui/lib/menu-item'
 import Backtop from 'element-ui/lib/backtop'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.use(VueJsonp)
 Vue.config.productionTip = false
@@ -25,14 +27,14 @@ Vue.use(MenuItem)
 Vue.use(Backtop)
 
 router.beforeEach((to, from, next) => {
-  console.log('Start loading')
-  store.commit('changeShowLoadingAsTrue')
+  // 开始进度条
+  NProgress.start()
+  // 继续路由
   next()
 })
-// 这里为了让效果明显一些加了延时
-router.afterEach((to, from) => {
-  console.log('Close loading')
-  store.commit('changeShowLoadingAsFalse')
+router.afterEach(transition => {
+  // 结束进度条
+  NProgress.done()
 })
 
 /* eslint-disable no-new */

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import homeComponent from '../components/index/home.vue'
+// import store from '../store/index'
 
 const main = () => {
   return import('../components/main/main.vue')
@@ -17,20 +18,11 @@ export default new Router({
     {
       path: '/main',
       component: main
-    //   children: [
-    //     {
-    //       path: '/0',
-    //       component: introductionComponent
-    //     },
-    //     {
-    //       path: '/1',
-    //       component: contentComponent
-    //     },
-    //     {
-    //       path: '/2',
-    //       component: interviewComponent
-    //     }
-    //   ]
+    //   beforeEnter: (to, from, next) => {
+    //     console.log('Start loading')
+    //     store.dispatch('onLoading', true)
+    //     next()
+    //   }
     }
   ]
 })

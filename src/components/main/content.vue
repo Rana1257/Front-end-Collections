@@ -48,6 +48,9 @@ export default {
     return {
       markdownText: No0
     }
+  },
+  created () {
+    console.log('End loading')
   }
 }
 </script>
