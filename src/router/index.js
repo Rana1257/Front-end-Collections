@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import homeComponent from '../components/index/home.vue'
-import mainComponent from '../components/main/main.vue'
 
 Vue.use(Router)
 
@@ -13,7 +12,7 @@ export default new Router({
     },
     {
       path: '/main',
-      component: mainComponent
+      component: () => import('../components/main/main.vue')
     //   children: [
     //     {
     //       path: '/0',
