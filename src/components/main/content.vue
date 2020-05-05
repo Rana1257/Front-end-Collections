@@ -9,7 +9,6 @@
 <script>
 import VueMarkdown from 'vue-markdown'
 import No0 from '../../../static/0.md'
-// import axios from 'axios'
 import 'github-markdown-css'
 
 export default {
