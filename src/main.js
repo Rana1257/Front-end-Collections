@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/index'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueJsonp from 'vue-jsonp'
 import Button from 'element-ui/lib/button'
@@ -23,10 +24,22 @@ Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.use(Backtop)
 
+router.beforeEach((to, from, next) => {
+  console.log('Start loading')
+  store.commit('changeShowLoadingAsTrue')
+  next()
+})
+// 这里为了让效果明显一些加了延时
+router.afterEach((to, from) => {
+  console.log('Close loading')
+  store.commit('changeShowLoadingAsFalse')
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
