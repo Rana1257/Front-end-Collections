@@ -38,6 +38,9 @@ export default {
         case 4:
           this.markdownText = await import('../../../static/4.md')
           break
+        case 5:
+          this.markdownText = await import('../../../static/5.md')
+          break
       }
     }
   },

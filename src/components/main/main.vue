@@ -46,7 +46,8 @@ export default {
         {id: 1, title: 'JS运行机制', subTitle: ['前言', '为什么会有这个项目', '总结']},
         {id: 2, title: 'JS的异步', subTitle: ['前言', '为什么会有这个项目', '总结']},
         {id: 3, title: '双向数据绑定', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 4, title: '面经汇总', subTitle: ['前言', '为什么会有这个项目', '总结']}
+        {id: 4, title: '面经汇总', subTitle: ['前言', '为什么会有这个项目', '总结']},
+        {id: 5, title: '前端性能优化', subTitle: ['前言', '为什么会有这个项目', '总结']}
       ],
       uniqueOpen: true,
       currentId: 0
