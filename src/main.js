@@ -13,8 +13,7 @@ import Col from 'element-ui/lib/col'
 import Menu from 'element-ui/lib/menu'
 import MenuItem from 'element-ui/lib/menu-item'
 import Backtop from 'element-ui/lib/backtop'
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+import Loading from 'element-ui/lib/loading'
 
 Vue.use(VueJsonp)
 Vue.config.productionTip = false
@@ -26,15 +25,17 @@ Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.use(Backtop)
 
+const options = {
+  fullscreen: true,
+  text: 'Fetching data from Github servers...'
+}
+
 router.beforeEach((to, from, next) => {
-  // 开始进度条
-  NProgress.start()
-  // 继续路由
+  Loading.service(options)
   next()
 })
 router.afterEach(transition => {
-  // 结束进度条
-  NProgress.done()
+  Loading.service(options).close()
 })
 
 /* eslint-disable no-new */

@@ -12,12 +12,10 @@
     "analyz": "NODE_ENV=production npm_config_report=true npm run build"
   },
   "dependencies": {
-    "element-ui": "^2.13.1",
     "flexible": "^0.1.20",
     "highlightjs-line-numbers.js": "^2.7.0",
     "json2md": "^1.7.0",
     "md-to-json": "^1.0.2",
-    "nprogress": "^0.2.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue-jsonp": "^0.1.8",
