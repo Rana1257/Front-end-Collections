@@ -28,6 +28,10 @@ export default new Router({
       component: main
     },
     {
+      path: '/main/跨域',
+      component: main
+    },
+    {
       path: '/main/JS的异步',
       component: main
     },

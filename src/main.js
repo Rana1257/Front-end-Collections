@@ -31,7 +31,6 @@ const options = {
 
 router.beforeEach((to, from, next) => {
   if (to.path === '/main' && from.path === '/') {
-    console.log(to.path, from.path)
     Loading.service(options)
     next()
     Loading.service(options).close()

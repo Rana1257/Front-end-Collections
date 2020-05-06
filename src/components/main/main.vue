@@ -39,10 +39,11 @@ export default {
         {id: 0, title: '简介'},
         {id: 1, title: 'JS运行机制'},
         {id: 2, title: 'JS的异步'},
-        {id: 3, title: '双向数据绑定'},
-        {id: 4, title: '面经汇总'},
-        {id: 5, title: '前端性能优化'},
-        {id: 6, title: '时间与空间复杂度分析'}
+        {id: 3, title: '跨域'},
+        {id: 4, title: '双向数据绑定'},
+        {id: 5, title: '面经汇总'},
+        {id: 6, title: '前端性能优化'},
+        {id: 7, title: '时间与空间复杂度分析'}
       ],
       uniqueOpen: true,
       currentUrl: ''
