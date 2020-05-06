@@ -244,7 +244,8 @@ function jumpFloorII(number) {
 >
 > 比如 n=3 时，2\*3 的矩形块有 3 种覆盖方法：
 >
-> ![矩阵覆盖](./img/矩阵覆盖.png)
+> ![矩阵覆盖](https://raw.githubusercontent.com/Rana1257/Front-end-Collections/Lee/static/img/矩阵覆盖.png)
+
 ```js
 function rectCover(number) {
   // write code here
@@ -531,7 +532,7 @@ function judgeSubtree(root1, root2) {
 
 > 操作给定的二叉树，将其变换为源二叉树的镜像。
 >
-> ![二叉树的镜像](./img/二叉树的镜像.png)
+> ![二叉树的镜像](https://raw.githubusercontent.com/Rana1257/Front-end-Collections/Lee/static/img/二叉树的镜像.png)
 
 ```js
 /* function TreeNode(x) {
@@ -561,7 +562,7 @@ function Mirror(root) {
 > 怎么找到标记点？对于每一层来说，设左上角的元素坐标为 (i, j)，那么右上角的元素坐标为 (i, n - j - 1)，右下角的元素坐标是 (m - i - 1 ,n - j - 1)，左下角的元素坐标是 (m - i - 1, j)。找到标记点后，就是对行/列进行+/-的过程。
 
 > 怎么防止重复遍历？找到四个坐标点后，每一层的遍历可以拆分成 4 个部分。
-> ![顺时针打印矩阵](./img/顺时针打印矩阵.png)
+> ![顺时针打印矩阵](https://raw.githubusercontent.com/Rana1257/Front-end-Collections/Lee/static/img/顺时针打印矩阵.png)
 
 ```js
 function printMatrix(matrix) {
@@ -1852,7 +1853,7 @@ function EntryNodeOfLoop(pHead) {
 
 > 方法二：
 >
-> ![链表中环的入口结点](./img/链表中环的入口结点.png)
+> ![链表中环的入口结点](https://raw.githubusercontent.com/Rana1257/Front-end-Collections/Lee/static/img/链表中环的入口结点.png)
 >
 > 设置快慢指针，都从链表头出发，快指针每次走两步，慢指针一次走一步，假如有环，一定相遇于环中某点(结论 1)。接着让两个指针分别从相遇点和链表头出发，两者都改为每次走一步，最终相遇于环入口(结论 2)。以下是两个结论证明：
 > 两个结论：
@@ -2364,7 +2365,7 @@ function isValid(i, j, threshold) {
 > 假设每份长度为 x，那么 m=n/x;
 >
 > 那么结果就是 f(x)=x^(n/x)
-> ![剪绳子](./img/剪绳子.jpg)
+> ![剪绳子](https://images.cnblogs.com/cnblogs_com/muzidaitou/1644305/o_200418113537%E5%89%AA%E7%BB%B3%E5%AD%90.jpg)
 > 所以问题就回到了 n/3 的个数上面
 >
 > 当 n 能被 3 整除的时候，乘积=n^(n/3)
