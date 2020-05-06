@@ -46,6 +46,10 @@ export default new Router({
     {
       path: '/main/时间与空间复杂度分析',
       component: main
+    },
+    {
+      path: '/main/牛客网 - 剑指offer',
+      component: main
     }
   ]
 })

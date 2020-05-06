@@ -48,7 +48,8 @@ export default {
         {id: 3, title: '双向数据绑定', subTitle: ['前言', '为什么会有这个项目', '总结']},
         {id: 4, title: '面经汇总', subTitle: ['前言', '为什么会有这个项目', '总结']},
         {id: 5, title: '前端性能优化', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 6, title: '时间与空间复杂度分析', subTitle: ['前言', '为什么会有这个项目', '总结']}
+        {id: 6, title: '时间与空间复杂度分析', subTitle: ['前言', '为什么会有这个项目', '总结']},
+        {id: 7, title: '牛客网 - 剑指offer', subTitle: ['前言', '为什么会有这个项目', '总结']}
       ],
       uniqueOpen: true,
       currentUrl: ''
