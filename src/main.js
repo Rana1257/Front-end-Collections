@@ -30,11 +30,15 @@ const options = {
 }
 
 router.beforeEach((to, from, next) => {
-  Loading.service(options)
-  next()
+  if (to.path === '/main' && from.path === '/') {
+    Loading.service(options)
+    next()
+    Loading.service(options).close()
+  } else {
+    next()
+  }
 })
 router.afterEach(transition => {
-  Loading.service(options).close()
 })
 
 /* eslint-disable no-new */
