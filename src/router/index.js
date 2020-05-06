@@ -42,6 +42,10 @@ export default new Router({
     {
       path: '/main/前端性能优化',
       component: main
+    },
+    {
+      path: '/main/时间与空间复杂度分析',
+      component: main
     }
   ]
 })
