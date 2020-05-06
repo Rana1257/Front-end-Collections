@@ -12,20 +12,14 @@
                         :key="titles.id"
                         :index="String(titles.id)"
                         v-on:click="asideClickHandler(titles.id)">
-                            <!-- <router-link :to="titles.routerId"> -->
                             <template slot="title">
                                 <span>{{titles.title}}</span>
                             </template>
-                            <!-- <el-menu-item-group v-for="(item, index) in titles.subTitle" :key="index" :index="index"  @click.native="handelClick(titles.menuId, index)">
-                                <el-menu-item>{{item}}</el-menu-item>
-                            </el-menu-item-group> -->
-                            <!-- </router-link> -->
                         </el-menu-item>
                     </el-menu>
                 </el-col>
             </el-row>
             <content-component :url="currentUrl"></content-component>
-            <!-- <router-view></router-view> -->
         </el-main>
     </div>
 </template>
@@ -42,13 +36,13 @@ export default {
     return {
       name: 'MAIN',
       content: [
-        {id: 0, title: '简介', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 1, title: 'JS运行机制', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 2, title: 'JS的异步', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 3, title: '双向数据绑定', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 4, title: '面经汇总', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 5, title: '前端性能优化', subTitle: ['前言', '为什么会有这个项目', '总结']},
-        {id: 6, title: '时间与空间复杂度分析', subTitle: ['前言', '为什么会有这个项目', '总结']}
+        {id: 0, title: '简介'},
+        {id: 1, title: 'JS运行机制'},
+        {id: 2, title: 'JS的异步'},
+        {id: 3, title: '双向数据绑定'},
+        {id: 4, title: '面经汇总'},
+        {id: 5, title: '前端性能优化'},
+        {id: 6, title: '时间与空间复杂度分析'}
       ],
       uniqueOpen: true,
       currentUrl: ''

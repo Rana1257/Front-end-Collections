@@ -26,7 +26,6 @@ export default {
     },
     '$route.path': function (value) {
       let routerUrl = value.split('/')[2]
-      console.log(routerUrl, this.url)
       if (routerUrl !== this.url) {
         this.url = routerUrl
       }
