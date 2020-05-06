@@ -8,49 +8,27 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-import No0 from '../../../static/0.md'
+import introduction from '../../../static/简介.md'
 import 'github-markdown-css'
 
 export default {
   name: 'contentComponent',
   props: {
-    id: Number
+    url: String
   },
   components: {
     VueMarkdown
   },
   watch: {
-    async id (idFromParent) {
-      const id = idFromParent
-      switch (id) {
-        case 0:
-          this.markdownText = await import('../../../static/0.md')
-          break
-        case 1:
-          this.markdownText = await import('../../../static/1.md')
-          break
-        case 2:
-          this.markdownText = await import('../../../static/2.md')
-          break
-        case 3:
-          this.markdownText = await import('../../../static/3.md')
-          break
-        case 4:
-          this.markdownText = await import('../../../static/4.md')
-          break
-        case 5:
-          this.markdownText = await import('../../../static/5.md')
-          break
-      }
+    async url (idFromParent) {
+      const url = this.url
+      this.markdownText = await import('../../../static/' + url + '.md')
     }
   },
   data () {
     return {
-      markdownText: No0
+      markdownText: introduction
     }
-  },
-  created () {
-    console.log('End loading')
   }
 }
 </script>

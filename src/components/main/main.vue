@@ -24,7 +24,7 @@
                     </el-menu>
                 </el-col>
             </el-row>
-            <content-component :id="currentId"></content-component>
+            <content-component :url="currentUrl"></content-component>
             <!-- <router-view></router-view> -->
         </el-main>
     </div>
@@ -50,12 +50,13 @@ export default {
         {id: 5, title: '前端性能优化', subTitle: ['前言', '为什么会有这个项目', '总结']}
       ],
       uniqueOpen: true,
-      currentId: 0
+      currentUrl: ''
     }
   },
   methods: {
     asideClickHandler (id) {
-      this.currentId = id
+      let url = String(this.content[id].title)
+      this.currentUrl = url
     }
   }
 }

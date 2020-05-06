@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './store/index'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueJsonp from 'vue-jsonp'
 import Button from 'element-ui/lib/button'
@@ -42,7 +41,6 @@ router.afterEach(transition => {
 new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })
