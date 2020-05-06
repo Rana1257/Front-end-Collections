@@ -23,12 +23,22 @@ export default {
     async url (idFromParent) {
       const url = this.url
       this.markdownText = await import('../../../static/' + url + '.md')
+    },
+    '$route.path': function (value) {
+      let routerUrl = value.split('/')[2]
+      console.log(routerUrl, this.url)
+      if (routerUrl !== this.url) {
+        this.url = routerUrl
+      }
     }
   },
   data () {
     return {
       markdownText: introduction
     }
+  },
+  created () {
+    this.$router.push({path: `/main/简介`})
   }
 }
 </script>

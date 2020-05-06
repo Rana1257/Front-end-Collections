@@ -56,6 +56,7 @@ export default {
   methods: {
     asideClickHandler (id) {
       let url = String(this.content[id].title)
+      this.$router.push({path: `/main/${url}`})
       this.currentUrl = url
     }
   }

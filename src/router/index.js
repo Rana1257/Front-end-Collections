@@ -18,11 +18,30 @@ export default new Router({
     {
       path: '/main',
       component: main
-    //   beforeEnter: (to, from, next) => {
-    //     console.log('Start loading')
-    //     store.dispatch('onLoading', true)
-    //     next()
-    //   }
+    },
+    {
+      path: '/main/简介',
+      component: main
+    },
+    {
+      path: '/main/JS运行机制',
+      component: main
+    },
+    {
+      path: '/main/JS的异步',
+      component: main
+    },
+    {
+      path: '/main/双向数据绑定',
+      component: main
+    },
+    {
+      path: '/main/面经汇总',
+      component: main
+    },
+    {
+      path: '/main/前端性能优化',
+      component: main
     }
   ]
 })
