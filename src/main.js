@@ -33,12 +33,14 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/main' && from.path === '/') {
     Loading.service(options)
     next()
-    Loading.service(options).close()
   } else {
     next()
   }
 })
-router.afterEach(transition => {
+router.afterEach((to, from) => {
+  if (to.path === '/main' && from.path === '/') {
+    Loading.service(options).close()
+  }
 })
 
 /* eslint-disable no-new */
