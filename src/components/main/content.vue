@@ -2,7 +2,6 @@
     <div>
         <el-backtop><span class="arrow"></span></el-backtop>
         <vue-markdown class="mdClass markdown-body" :source="markdownText"></vue-markdown>
-
     </div>
 </template>
 

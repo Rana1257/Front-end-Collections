@@ -25,12 +25,11 @@ Vue.use(MenuItem)
 Vue.use(Backtop)
 
 const options = {
-  fullscreen: true,
   text: 'Fetching data from Github servers...'
 }
 
 router.beforeEach((to, from, next) => {
-  if (to.path === '/main' && from.path === '/') {
+  if (to.path === '/main/简介' && from.path === '/') {
     Loading.service(options)
     next()
   } else {
@@ -38,7 +37,7 @@ router.beforeEach((to, from, next) => {
   }
 })
 router.afterEach((to, from) => {
-  if (to.path === '/main' && from.path === '/') {
+  if (to.path === '/main/简介' && from.path === '/') {
     Loading.service(options).close()
   }
 })

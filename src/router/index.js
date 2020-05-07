@@ -16,10 +16,6 @@ export default new Router({
       component: homeComponent
     },
     {
-      path: '/main',
-      component: main
-    },
-    {
       path: '/main/简介',
       component: main
     },
