@@ -57,4 +57,7 @@ export default {
         border-left 7px solid transparent
         border-right 7px solid transparent
         border-bottom 8px solid #42B983
+
+    >>> .el-backtop:hover
+        background-color #eeeeee
 </style>
