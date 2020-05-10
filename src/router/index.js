@@ -48,6 +48,10 @@ export default new Router({
       component: main
     },
     {
+      path: '/main/树、二叉树、二叉搜索树',
+      component: main
+    },
+    {
       path: '/main/牛客网 - 剑指offer',
       component: main
     }
