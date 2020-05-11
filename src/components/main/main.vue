@@ -45,7 +45,8 @@ export default {
         {id: 6, title: '前端性能优化'},
         {id: 7, title: '时间与空间复杂度分析'},
         {id: 8, title: '树、二叉树、二叉搜索树'},
-        {id: 9, title: '牛客网 - 剑指offer'}
+        {id: 9, title: '递归思维'},
+        {id: 10, title: '牛客网 - 剑指offer'}
       ],
       uniqueOpen: true,
       currentUrl: ''

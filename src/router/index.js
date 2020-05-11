@@ -52,6 +52,10 @@ export default new Router({
       component: main
     },
     {
+      path: '/main/递归思维',
+      component: main
+    },
+    {
       path: '/main/牛客网 - 剑指offer',
       component: main
     }
