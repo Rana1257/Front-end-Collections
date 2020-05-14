@@ -6,10 +6,13 @@
 
 通过阅读下面的内容，你将会了解到：
 * JS代码的执行机制
+* 事件循环
 * 执行上下文
 * 作用域与作用域链
 * this的指向
 * 闭包的本质
+
+&nbsp;
 
 ## 预备知识
 
@@ -68,11 +71,60 @@
 
 一个JavaScript引擎由两部分组成，以著名的V8引擎为例，它包括：
 * 内存堆：分配内存的地方
-* [调用栈](https://developer.mozilla.org/zh-CN/docs/Glossary/Call_stack)：执行函数的地方
+* [调用栈](https://developer.mozilla.org/zh-CN/docs/Glossary/Call_stack)：执行任务的地方
 
 ![img](https://raw.githubusercontent.com/Rana1257/Front-end-Collections/master/static/img/JavaScript%E7%9A%84%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6-%E5%9B%BE1.jpg)
 
 调用栈，也称执行上下文栈，是一个用来管理执行上下文的栈结构。当然现在你只需要知道JS引擎使用一个叫执行上下文栈的结构来管理函数的执行就行了。
+
+### 事件循环
+
+有了上面这些预备知识，我们就可以直接进入JS的[事件循环](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop)（Event loop）这一部分了。前面我们已经介绍过JS引擎本身是单线程的。这就意味着：
+>所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。
+
+也就是说，所有的任务都会被push进调用栈中，等待JS引擎执行。这些任务分为同步任务和异步任务，关于它们的区别请看下一篇JS的异步。你现在只需要知道：同步任务在主线程上排队执行，只有前一个任务执行完毕，才能执行后一个任务。异步任务（一般是异步操作的回调函数）则会进入任务队列（Task queue）中，等待主线程的执行。
+
+具体而言，JS引擎执行任务的机制如下：
+
+* 同步任务被 `push` 进调用栈中，等待JS引擎线程的执行，执行完毕后，再 `pop` 出栈。
+* 当异步操作返回结果后，会在任务队列中，注册对应的异步任务（通常是异步回调函数）。
+* 当执行完所有的同步任务后（此时调用栈为空），再从任务队列中取异步任务顺序执行。
+
+JS引擎线程会不断地重复上面的步骤，因此这种机制被叫做**事件循环**。
+
+对于任务队列来说，又可以细分为宏任务（队列）和微任务（队列）。需要注意的是：**宏任务队列可以有多个，而微任务队列只有一个**。这两种任务的执行顺序是：先执行宏任务，然后一次性执行完所有的微任务（若执行微任务的时候产生了新的微任务，则继续执行新的微任务），再进行下一轮的循环。
+
+宏任务包括：
+* script（整体代码本身是一个**宏任务**）
+* setTimeout，setInterval，setImmediate 一类的定时事件
+* I/O （输入输出设备）操作，比如Ajax
+
+微任务包括：
+* Promise的回调和所有基于Promise的任务（比如Async await）
+* [MutationObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver)
+
+需要注意的是：`script` 标签内的代码本身是一个巨大的宏任务，这个任务内部又有同步任务、微任务和宏任务。因此，一开始调用栈为空，JS引擎线程空闲。于是就从任务队列中取任务执行。第一个被 `push` 进调用栈的是 `script` 。会先执行 `script` 内部的同步任务，遇到异步任务后，就将对应的回调函数注册到任务队列中。同步代码执行完毕后， `script` 被 `pop` 出调用栈。由于异步任务是**先执行一个宏任务，再一次性执行完所有的微任务**，所以当 `script` 这个宏任务执行完毕后，就把微任务队列中的微任务依次 `push` 进调用栈让JS引擎线程执行。接着执行下一个宏任务。
+
+举一个简单的事件循环题目：
+
+```javascript
+    console.log('1')
+    const p = new Promise((resolve, reject) => {
+        console.log('2')
+        resolve()
+    })
+    p.then(resolve => {
+        console.log('4')
+    })
+    setTimeout(() => {
+        console.log('5')
+    }, 0)
+    console.log('3')
+```
+
+答案是 `1, 2, 3, 4, 5`。提示：对于 `Promise` 实例内部的代码 `console.log('2')`，是在新建实例化对象 `p` 的时候立即执行的，而 `resolve()` 才是一个异步操作。它所对应的回调函数，也就是 `then` 方法中 `console.log('4')` 被注册到微任务队列中等待执行。
+
+&nbsp;
 
 ## JavaScript代码的执行过程
 
@@ -85,7 +137,7 @@ JS引擎执行JavaScript代码并不是一行行执行的。JS的执行分为两
 
 在预解析阶段，JS首先创建了执行上下文。
 
-## 执行上下文
+### 执行上下文
 
 执行上下文（Execution context）的定义可能有点难以给出。简而言之，执行上下文是代码执行之前的准备工作。在JavaScript中有三种类型的执行上下文：
 
