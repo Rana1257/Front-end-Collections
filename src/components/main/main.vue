@@ -12,12 +12,7 @@
                         :key="titles.id"
                         :index="String(titles.id)"
                         v-on:click="asideClickHandler(titles.id)">
-                            <el-tooltip
-                            :content=titles.title
-                            placement="right"
-                            >
-                                <div>{{titles.title}}</div>
-                            </el-tooltip>
+                            <span>{{titles.title}}</span>
                         </el-menu-item>
                     </el-menu>
                 </el-col>
