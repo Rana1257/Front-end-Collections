@@ -12,9 +12,12 @@
                         :key="titles.id"
                         :index="String(titles.id)"
                         v-on:click="asideClickHandler(titles.id)">
-                            <template slot="title">
-                                <span>{{titles.title}}</span>
-                            </template>
+                            <el-tooltip
+                            :content=titles.title
+                            placement="right"
+                            >
+                                <div>{{titles.title}}</div>
+                            </el-tooltip>
                         </el-menu-item>
                     </el-menu>
                 </el-col>
@@ -63,6 +66,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+    .toolTipe
+        background-color #fff
     .main >>> .el-loading-spinner
         top 300px
 
@@ -71,6 +76,7 @@ export default {
         left 0
         top 110px
         width 15%
+        min-width 100px
         text-align left
     .aside >>> .el-menu
         border-right 0
@@ -79,6 +85,7 @@ export default {
     .aside >>> .el-menu-item
         overflow hidden
         white-space nowrap
+        text-overflow ellipsis
         min-width 0
     .aside >>> .is-active
         color #3eaf7c

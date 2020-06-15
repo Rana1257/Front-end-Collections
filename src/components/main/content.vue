@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="content">
         <el-backtop><span class="arrow"></span></el-backtop>
         <vue-markdown class="mdClass markdown-body" :source="markdownText"></vue-markdown>
     </div>
@@ -42,6 +42,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  .content
+    min-width 510px
     .mdClass
         color #2c3e50
         margin-left 16%

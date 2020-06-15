@@ -13,6 +13,7 @@ import Menu from 'element-ui/lib/menu'
 import MenuItem from 'element-ui/lib/menu-item'
 import Backtop from 'element-ui/lib/backtop'
 import Loading from 'element-ui/lib/loading'
+import Tooltip from 'element-ui/lib/tooltip'
 
 Vue.use(VueJsonp)
 Vue.config.productionTip = false
@@ -23,6 +24,7 @@ Vue.use(Col)
 Vue.use(Menu)
 Vue.use(MenuItem)
 Vue.use(Backtop)
+Vue.use(Tooltip)
 
 const loadingText = {
   text: 'Fetching data from Github servers...'
