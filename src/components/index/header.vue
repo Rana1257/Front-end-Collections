@@ -1,14 +1,10 @@
 <template>
     <div class="header">
-        <!-- <router-link to="/">
-            <el-page-header title="前端基础与进阶指南" class="header-title"></el-page-header>
-        </router-link> -->
         <el-menu class="header-menu">
             <router-link to="/">
                 <el-menu-item index="1" class="title">{{titleText}}</el-menu-item>
             </router-link>
             <el-menu-item index="2" class="blank"></el-menu-item>
-            <!-- <el-menu-item index="3" class="linkToIndex">指南</el-menu-item> -->
             <el-menu-item index="4" class="linkToGithub" @click="handelLinkToGithub">Github</el-menu-item>
         </el-menu>
     </div>

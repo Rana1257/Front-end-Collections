@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-main class="main">
-            <img src="../../assets/logo.png">
+            <img src="../../assets/logo.png" alt="Welcome to Front-end Collections">
             <h1>
                 {{welcomeText}}
             </h1>
