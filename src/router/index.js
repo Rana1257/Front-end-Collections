@@ -58,6 +58,10 @@ export default new Router({
     {
       path: '/main/牛客网 - 剑指offer',
       component: main
+    },
+    {
+      path: '/main/JS学习记录',
+      component: main
     }
   ]
 })

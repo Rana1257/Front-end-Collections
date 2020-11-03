@@ -44,7 +44,8 @@ export default {
         {id: 7, title: '时间与空间复杂度分析'},
         {id: 8, title: '树、二叉树、二叉搜索树'},
         {id: 9, title: '递归思维'},
-        {id: 10, title: '牛客网 - 剑指offer'}
+        {id: 10, title: '牛客网 - 剑指offer'},
+        {id: 11, title: 'JS学习记录'}
       ],
       uniqueOpen: true,
       currentUrl: ''
