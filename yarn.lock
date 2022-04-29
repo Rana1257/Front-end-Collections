@@ -381,9 +381,9 @@ async@*:
   integrity sha1-s6JoXF67ZB094C0WEALGD8n4VyA=
 
 async@^2.1.2, async@^2.4.1, async@^2.6.2:
-  version "2.6.3"
-  resolved "http://npm.envisioncn.com:7001/async/download/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
-  integrity sha1-1yYl4jRKNlbjo61Pp0n6gymdgv8=
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.6.4.tgz#706b7ff6084664cd7eae713f6f965433b5504221"
+  integrity sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==
   dependencies:
     lodash "^4.17.14"
 
@@ -650,6 +650,11 @@ babel-plugin-check-es2015-constants@^6.22.0:
   integrity sha1-NRV7EBQm/S/9PaP3XH0ekYNbv4o=
   dependencies:
     babel-runtime "^6.22.0"
+
+babel-plugin-prismjs@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-prismjs/-/babel-plugin-prismjs-2.1.0.tgz#ade627896106326ad04d6d77fba92877618de571"
+  integrity sha512-ehzSKYfeAz4U78zi/sfwsjDPlq0LvDKxNefcZTJ/iKBu+plsHsLqZhUeGf1+82LAcA35UZGbU6ksEx2Utphc/g==
 
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
@@ -1682,15 +1687,6 @@ cli-width@^2.0.0:
   resolved "http://npm.envisioncn.com:7001/cli-width/download/cli-width-2.2.1.tgz#b0433d0b4e9c847ef18868a4ef16fd5fc8271c48"
   integrity sha1-sEM9C06chH7xiGik7xb9X8gnHEg=
 
-clipboard@^2.0.0:
-  version "2.0.6"
-  resolved "http://npm.envisioncn.com:7001/clipboard/download/clipboard-2.0.6.tgz#52921296eec0fdf77ead1749421b21c968647376"
-  integrity sha1-UpISlu7A/fd+rRdJQhshyWhkc3Y=
-  dependencies:
-    good-listener "^1.2.2"
-    select "^1.1.2"
-    tiny-emitter "^2.0.0"
-
 cliui@^2.1.0:
   version "2.1.0"
   resolved "http://npm.envisioncn.com:7001/cliui/download/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -2481,11 +2477,6 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "http://npm.envisioncn.com:7001/delayed-stream/download/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
-
-delegate@^3.1.2:
-  version "3.2.0"
-  resolved "http://npm.envisioncn.com:7001/delegate/download/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
-  integrity sha1-tmtxwxWFIuirV0T3INjKDCr1kWY=
 
 depd@~1.1.2:
   version "1.1.2"
@@ -3656,13 +3647,6 @@ globby@^7.1.1:
     pify "^3.0.0"
     slash "^1.0.0"
 
-good-listener@^1.2.2:
-  version "1.2.2"
-  resolved "http://npm.envisioncn.com:7001/good-listener/download/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
-  integrity sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=
-  dependencies:
-    delegate "^3.1.2"
-
 graceful-fs@^4.1.11, graceful-fs@^4.1.2:
   version "4.2.4"
   resolved "http://npm.envisioncn.com:7001/graceful-fs/download/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
@@ -4813,9 +4797,9 @@ lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.1.0, lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
-  version "4.17.15"
-  resolved "http://npm.envisioncn.com:7001/lodash/download/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha1-tEf2ZwoEVbv+7dETku/zMOoJdUg=
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^2.1.0:
   version "2.2.0"
@@ -6601,12 +6585,10 @@ pretty-error@^2.0.2:
     renderkid "^2.0.1"
     utila "~0.4"
 
-prismjs@^1.20.0:
-  version "1.20.0"
-  resolved "http://npm.envisioncn.com:7001/prismjs/download/prismjs-1.20.0.tgz#9b685fc480a3514ee7198eac6a3bf5024319ff03"
-  integrity sha1-m2hfxICjUU7nGY6sajv1AkMZ/wM=
-  optionalDependencies:
-    clipboard "^2.0.0"
+prismjs@^1.22.0:
+  version "1.28.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.28.0.tgz#0d8f561fa0f7cf6ebca901747828b149147044b6"
+  integrity sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==
 
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
@@ -7237,11 +7219,6 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "http://npm.envisioncn.com:7001/select-hose/download/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
   integrity sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
-
-select@^1.1.2:
-  version "1.1.2"
-  resolved "http://npm.envisioncn.com:7001/select/download/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
-  integrity sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
 
 selfsigned@^1.9.1:
   version "1.10.7"
@@ -7935,11 +7912,6 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "http://npm.envisioncn.com:7001/timsort/download/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
-
-tiny-emitter@^2.0.0:
-  version "2.1.0"
-  resolved "http://npm.envisioncn.com:7001/tiny-emitter/download/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
-  integrity sha1-HRpW7fxRxD6GPLtTgqcjMONVVCM=
 
 tmp@^0.0.33:
   version "0.0.33"
